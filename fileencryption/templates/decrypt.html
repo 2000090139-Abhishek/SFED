@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decryption</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007bff; /* Blue color for the heading */
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff; /* Blue color for the button */
+            color: #fff;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+
+        p {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        pre {
+            white-space: pre-wrap; /* Preserve line breaks and wrap text */
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>File Decryption</h2>
+    <form method="post" action="{% url 'decrypt_file' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="encrypted_file">Encrypted File:</label>
+        <input type="file" name="encrypted_file" required>
+        <label for="key_file">Key File:</label>
+        <input type="file" name="key_file" required>
+        <button type="submit">Decrypt File</button>
+    </form>
+    {% if decrypted_data %}
+        <p>Decrypted Data:</p>
+        <pre>{{ decrypted_data }}</pre>
+    {% endif %}
+</body>
+</html>

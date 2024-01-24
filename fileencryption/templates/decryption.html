@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decryption</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007bff; /* Blue color for the heading */
+        }
+
+        p {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff; /* Blue color for the link */
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>File Decryption</h2>
+    <p>File decrypted successfully! <a href="{% url 'encrypt_file' %}">Encrypt Another File</a></p>
+</body>
+</html>
