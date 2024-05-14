@@ -87,6 +87,3 @@ def decrypt_file_view(request, encrypted_file_name):
     return response
 
 
-
-
-
